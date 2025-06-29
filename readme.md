@@ -47,6 +47,7 @@ Input SQS message:
 Output stored to:
     s3://lemay/labeled_websites/
 """
+```
 
 5️⃣ **Lambda functions scrape websites** (using `requests` + `BeautifulSoup`), respecting `robots.txt`, and summarize page content into structured text suitable for classification. **Since this project runs in a sandbox environment, I could not allocate sufficient resources to Lambda to use Selenium for JavaScript-heavy websites, so the scraper focuses on efficiently extracting content from static and lightweight pages.**
 6️⃣ Scraped data is stored in S3, and **the ECS worker continuously listening to the SQS queue picks up new chunks for classification**.  
