@@ -57,7 +57,6 @@ Output stored to:
 7️⃣ ECS tasks perform zero-shot classification using Hugging Face BART MNLI inside the container, labeling each website's content (e.g., `news`, `education`, `shopping`).
 
 8️⃣ A Lambda function monitors the pipeline, and once the number of classified files in the S3 output bucket matches the number of chunks, the Lambda automatically deletes the ECS service, completing the pipeline.
-ction monitors the pipeline, and **once the number of classified files in the S3 output bucket matches the number of chunks**, the Lambda **automatically deletes the ECS service**, completing the pipeline.
 
 All orchestrated **serverlessly using AWS Lambda as the backbone**, enabling scalable, cost-efficient processing of large-scale website scraping and classification workflows.
 
