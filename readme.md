@@ -58,7 +58,8 @@ All orchestrated **serverlessly using AWS Lambda as the backbone**, enabling sca
 
 ## 🛠️ Architecture
 
-![Lambda Everywhere Architecture](link_to_your_uploaded_diagram.png)
+![Lambda Everywhere Architecture](<img width="967" alt="image" src="https://github.com/user-attachments/assets/2b943f1d-1d7d-4947-bba7-787b46ae4a9a" />
+)
 
 Lambda Everywhere follows an **event-driven, serverless architecture**:
 
