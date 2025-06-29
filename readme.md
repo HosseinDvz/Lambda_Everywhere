@@ -10,7 +10,7 @@ Lambda Everywhere demonstrates how AWS Lambda can orchestrate, **execute**, and 
 
 ✅ Triggering data pipelines (Glue) on file uploads  
 ✅ Performing and orchestrating website scraping workflows
-✅ Managing ECS workloads for large-scale classification  
+✅ Managing ECS workloads for large-scale classification
 ✅ Automating cleanup and lifecycle management
 
 All while ensuring **cost-effective, scalable, event-driven processing of real-world workflows**.
