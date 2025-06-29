@@ -9,8 +9,8 @@ Automating scalable website scraping and classification using AWS Lambda, ECS, G
 Lambda Everywhere demonstrates how AWS Lambda can orchestrate, **execute**, and automate a wide variety of tasks in a serverless architecture, including:
 
 ✅ Triggering data pipelines (Glue) on file uploads  
-✅ Performing and orchestrating website scraping workflows
-✅ Managing ECS workloads for large-scale classification
+✅ Performing and orchestrating website scraping workflows  
+✅ Managing ECS workloads for large-scale classification  
 ✅ Automating cleanup and lifecycle management
 
 All while ensuring **cost-effective, scalable, event-driven processing of real-world workflows**.
