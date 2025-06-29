@@ -27,7 +27,8 @@ Using AWS Lambda, I created a fully automated serverless pipeline:
 1️⃣ Upload a `.txt` file of websites to an S3 bucket.  
 2️⃣ Lambda triggers a Glue job to chunk the list into manageable parts.  
 3️⃣ Glue sends SQS messages for each chunk.  
-4️⃣ Once chunking is complete and the number of chunks is known, a Lambda function creates an ECS service with **the number of tasks equal to the number of chunks**. Since creating ECS tasks takes time, **scraping and ECS task creation proceed in parallel**.
+4️⃣ Once chunking is complete and the number of chunks is known, **Glue triggers a Lambda function that creates an ECS service with the number of tasks equal to the number of chunks**. Glue performs three key jobs: **chunking the uploaded file, sending SQS messages for each chunk, and triggering the Lambda function to create the ECS service**. Since ECS task creation takes time, scraping and ECS task creation proceed in parallel.
+
 
 The ECS service runs a **worker container** that continuously listens to the SQS queue:
 
