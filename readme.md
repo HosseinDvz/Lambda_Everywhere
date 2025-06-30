@@ -6,18 +6,18 @@ Automating scalable website scraping and classification using AWS Lambda, ECS, G
 
 ## 📌 Overview
 
-Lambda Everywhere demonstrates how AWS Lambda can orchestrate, **execute**, and automate a wide variety of tasks in a serverless architecture, including:
+Lambda Everywhere demonstrates how AWS Lambda can orchestrate, execute, and automate a wide variety of tasks in a serverless architecture, including:
 
 ✅ Triggering data pipelines (Glue) on file uploads  
 ✅ Performing and orchestrating website scraping workflows  
 ✅ Managing ECS workloads for large-scale classification  
 ✅ Automating cleanup and lifecycle management
 
-All while ensuring **cost-effective, scalable, event-driven processing of real-world workflows**.
+All while ensuring cost-effective, scalable, event-driven processing of real-world workflows.
 
 ## 🩶 Problem
 
-Organizations need to **monitor and analyze millions of websites** for competitive intelligence, pricing insights, brand monitoring, and compliance. However, building and maintaining large-scale scraping and classification pipelines traditionally requires **complex, costly infrastructure and significant engineering effort**, limiting scalability and agility.
+Organizations need to monitor and analyze millions of websites for competitive intelligence, pricing insights, brand monitoring, and compliance. However, building and maintaining large-scale scraping and classification pipelines traditionally requires complex, costly infrastructure and significant engineering effort, limiting scalability and agility.
 
 
 ## 🚀 Solution
@@ -27,10 +27,9 @@ Using AWS Lambda, I created a fully automated serverless pipeline:
 1️⃣ Upload a `.txt` file of websites to an S3 bucket.  
 2️⃣ Lambda triggers a Glue job to chunk the list into manageable parts.  
 3️⃣ Glue sends SQS messages for each chunk.  
-4️⃣ Once chunking is complete and the number of chunks is known, **Glue triggers a Lambda function that creates an ECS service with the number of tasks equal to the number of chunks**. Glue performs three key jobs: **chunking the uploaded file, sending SQS messages for each chunk, and triggering the Lambda function to create the ECS service**. Since ECS task creation takes time, scraping and ECS task creation proceed in parallel.
+4️⃣ Once chunking is complete and the number of chunks is known, Glue triggers a Lambda function that creates an ECS service with the number of tasks equal to the number of chunks. Glue performs three key jobs: chunking the uploaded file, sending SQS messages for each chunk (which trigger the Lambda scraper function), and triggering the Lambda function to create the ECS service. Since ECS task creation takes time, scraping and ECS task creation proceed in parallel.
 
-
-The ECS service runs a **worker container** that continuously listens to the SQS queue:
+The ECS service runs a worker that continuously listens to the SQS queue:
 
 ```python
 """
