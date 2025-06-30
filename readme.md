@@ -100,7 +100,7 @@ This architecture enables **scalable, automated website scraping and classificat
 
 ## 🎥 Demo Video
 
-[Watch the 3-minute demo here ➡️]([link_to_your_demo_video](https://youtu.be/IJoDGP0I71U)
+[Watch the 3-minute demo here ➡️](https://youtu.be/IJoDGP0I71U)
 
 ## 🚀 Future Improvements
 
